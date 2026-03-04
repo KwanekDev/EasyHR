@@ -1,9 +1,17 @@
 const { remote } = require("electron");
+const channels = document.querySelectorAll(".channel");
+
+channels.forEach(channel => {
+  channel.addEventListener("click", () => {
+    channels.forEach(c => c.classList.remove("active"));
+    channel.classList.add("active");
+  });
+});
+
 
 class UIController {
   constructor() {
     this.bindWindowControls();
-    this.bindButton();
   }
 
   bindWindowControls() {
@@ -16,13 +24,6 @@ class UIController {
 
     close.addEventListener("click", () => {
       remote.getCurrentWindow().close();
-    });
-  }
-
-  bindButton() {
-    const btn = document.getElementById("main-btn");
-    btn.addEventListener("click", () => {
-      btn.textContent = "Kliknięto";
     });
   }
 }

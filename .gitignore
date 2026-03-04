@@ -10,7 +10,7 @@ pnpm-debug.log*
 .env.*
 !.env.example
 
-# Electron Forge / Build output
+# 
 out/
 dist/
 build/
@@ -18,7 +18,7 @@ release/
 packaged/
 coverage/
 
-# Electron Forge Templates (zależnie od używanego bundlera)
+# 
 .webpack/
 .vite/
 makers/
@@ -52,5 +52,4 @@ Desktop.ini
 .parcel-cache/
 .eslintcache
 
-# TypeScript
 *.tsbuildinfo
