@@ -2,6 +2,8 @@ const { app } = require('electron');
 const channels = document.querySelectorAll(".channel");
 
 
+
+
 channels.forEach(channel => {
   channel.addEventListener("click", () => {
     // This is for css only
@@ -14,9 +16,19 @@ channels.forEach(channel => {
   });
 });
 
-class InTabScript {
-  logistics() {
-    console.log("Logistics");
+
+
+
+
+// In-tab html
+async function LoadHTML(tabName) {
+  try {
+    const response = await fetch(`./channels/frontend/${tabName}.html`);
+    const html = await response.text();
+    return html;
+  } catch (err) {
+    console.error("Failed to load HTML for tab:", tabName, err);
+    return "<h1>Failed to load content</h1>";
   }
 }
 
@@ -32,25 +44,22 @@ class UIController {
   }
 
   renderTab(tabName) {
-    const InScript = new InTabScript();
     if (tabName === "introduction") {
-      this.content.innerHTML = `
-        <h1>Welcome to EasyHR Dashboard</h1>
-        <h2>test</h2>
-      `;
+      LoadHTML("introduction").then(html => {
+        this.content.innerHTML = html;
+      });
     }
 
     if (tabName === "logistics") {
-      this.content.innerHTML = `
-        <h1>Logistics</h1>
-      `;
-      InScript.logistics();
+      LoadHTML("logistics").then(html => {
+        this.content.innerHTML = html;
+      });
     }
 
     if (tabName === "candidates") {
-      this.content.innerHTML = `
-        <h1>Candidates</h1>
-      `;
+      LoadHTML("candidates").then(html => {
+        this.content.innerHTML = html;
+      });
     }
   }
 
