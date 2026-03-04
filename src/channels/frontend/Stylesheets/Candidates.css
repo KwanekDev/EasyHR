@@ -1,0 +1,188 @@
+:root {
+  --color-bg-main: #1e1f22;
+  --color-bg-topbar: #2b2d31;
+  --color-bg-sidebar: #2b2d31;
+  --color-bg-content: #313338;
+  --color-bg-hover: #333436b7;
+  --color-bg-active: #404249;
+
+  --color-accent: #b3b3b3;
+  --color-accent-hover: #56575c;
+
+  --color-text-primary: #dbdee1;
+  --color-text-secondary: #b5bac1;
+  --color-text-muted: #949ba4;
+  --color-text-white: #ffffff;
+
+  --radius-default: 6px;
+  --radius-round: 50%;
+  --radius-hover: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--color-bg-main);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.candidates-page {
+  width: 100%;
+  max-width: 1400px;
+  padding: 40px 32px;
+}
+
+.candidates-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.candidate-card {
+  width: 100%;
+  background: var(--color-bg-content);
+  border-radius: 12px;
+  padding: 28px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.candidate-card:hover {
+  background: var(--color-bg-hover);
+  transform: translateY(-2px);
+}
+
+.candidate-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+}
+
+.candidate-avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: var(--radius-round);
+  background: var(--color-bg-active);
+  flex-shrink: 0;
+}
+
+.candidate-main {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.candidate-name {
+  font-size: 22px;
+  color: var(--color-text-white);
+}
+
+.candidate-position {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.candidate-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.candidate-link {
+  font-size: 14px;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.candidate-link:hover {
+  color: var(--color-accent-hover);
+}
+
+.candidate-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 18px;
+}
+
+.candidate-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.candidate-date {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.btn-audit {
+  padding: 8px 14px;
+  background: var(--color-bg-active);
+  border: none;
+  border-radius: var(--radius-default);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s ease;
+}
+
+.btn-audit:hover {
+  background: var(--color-bg-hover);
+}
+
+.stage-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.stage-box {
+  min-width: 220px;
+  text-align: center;
+  padding: 10px 18px;
+  background: var(--color-bg-active);
+  border-radius: var(--radius-default);
+}
+
+.stage-title {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.stage-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-round);
+  border: none;
+  background: var(--color-bg-active);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.stage-arrow:hover {
+  background: var(--color-bg-hover);
+}
+
+.stage-arrow:active {
+  transform: scale(0.95);
+}

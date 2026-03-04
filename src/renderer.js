@@ -1,5 +1,5 @@
 const { app } = require('electron');
-const channels = document.querySelectorAll(".channel");
+const channels = document.querySelectorAll(".channel, .settings");
 
 
 
@@ -44,23 +44,12 @@ class UIController {
   }
 
   renderTab(tabName) {
-    if (tabName === "introduction") {
-      LoadHTML("introduction").then(html => {
+      LoadHTML(tabName).then(html => { 
         this.content.innerHTML = html;
+      }).catch(err => {
+        console.error("Error loading tab content:", err);
+        this.content.innerHTML = "<h1>Failed to load content</h1>";
       });
-    }
-
-    if (tabName === "logistics") {
-      LoadHTML("logistics").then(html => {
-        this.content.innerHTML = html;
-      });
-    }
-
-    if (tabName === "candidates") {
-      LoadHTML("candidates").then(html => {
-        this.content.innerHTML = html;
-      });
-    }
   }
 
   bindWindowControls() {

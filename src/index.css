@@ -85,16 +85,6 @@ hr {
   display: flex;
 }
 
-.server-bar {
-  width: 72px;
-  background: var(--color-bg-main);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 12px;
-  gap: 12px;
-}
-
 .channel-bar {
   width: 240px;
   background: var(--color-bg-sidebar);
@@ -117,6 +107,25 @@ hr {
   cursor: pointer;
   color: var(--color-text-secondary);
   transition: background 0.2s, color 0.2s;
+}
+
+.settings {
+  margin-top: auto;
+  padding: 6px 8px;
+  border-radius: var(--radius-default);
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  transition: background 0.2s, color 0.2s;
+}
+
+.settings:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text-white);
+}
+
+.settings.active {
+  background: var(--color-bg-active);
+  color: var(--color-text-white);
 }
 
 .channel:hover {
