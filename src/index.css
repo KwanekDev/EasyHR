@@ -6,8 +6,8 @@
   --color-bg-hover: #3f4147;
   --color-bg-active: #404249;
 
-  --color-accent: #EF8354;
-  --color-accent-hover: #EF8354;
+  --color-accent: #b3b3b3;
+  --color-accent-hover: #8d8d8d;
 
   --color-text-primary: #dbdee1;
   --color-text-secondary: #b5bac1;
@@ -138,11 +138,11 @@ hr {
   justify-content: center;
 }
 
-.primary-btn:hover {
+.btn:hover {
   background: var(--color-accent-hover);
   transform: translateY(-1px);
 }
 
-.primary-btn:active {
+.btn:active {
   transform: translateY(0);
 }

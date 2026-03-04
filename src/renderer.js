@@ -1,4 +1,4 @@
-const { remote } = require("electron");
+const { app } = require('electron');
 const channels = document.querySelectorAll(".channel");
 
 
@@ -59,11 +59,11 @@ class UIController {
     const close = document.getElementById("close-btn");
 
     min.addEventListener("click", () => {
-      remote.getCurrentWindow().minimize();
+      window.electronAPI.minimizeWindow();
     });
 
     close.addEventListener("click", () => {
-      remote.getCurrentWindow().close();
+      window.electronAPI.closeWindow();
     });
   }
 }
