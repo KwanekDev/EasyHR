@@ -1,0 +1,141 @@
+:root {
+  --color-bg-main: #1e1f22;
+  --color-bg-topbar: #2b2d31;
+  --color-bg-sidebar: #2b2d31;
+  --color-bg-content: #313338;
+  --color-bg-hover: #3f4147;
+  --color-bg-active: #404249;
+
+  --color-accent: #EF8354;
+  --color-accent-hover: #EF8354;
+
+  --color-text-primary: #dbdee1;
+  --color-text-secondary: #b5bac1;
+  --color-text-muted: #949ba4;
+  --color-text-white: #ffffff;
+
+  --radius-default: 6px;
+  --radius-round: 50%;
+  --radius-hover: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--color-bg-main);
+  color: var(--color-text-primary);
+  height: 100vh;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.topbar {
+  height: 40px;
+  background: var(--color-bg-topbar);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  -webkit-app-region: drag;
+}
+
+.topbar-title {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.window-controls {
+  display: flex;
+  gap: 6px;
+  -webkit-app-region: no-drag;
+}
+
+.window-controls button {
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  border-radius: var(--radius-default);
+  transition: background 0.2s;
+}
+
+.window-controls button:hover {
+  background: var(--color-bg-hover);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+}
+
+.server-bar {
+  width: 72px;
+  background: var(--color-bg-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 12px;
+  gap: 12px;
+}
+
+.channel-bar {
+  width: 240px;
+  background: var(--color-bg-sidebar);
+  padding: 16px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.channel-title {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.channel {
+  padding: 6px 8px;
+  border-radius: var(--radius-default);
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  transition: background 0.2s, color 0.2s;
+}
+
+.channel:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text-white);
+}
+
+.channel.active {
+  background: var(--color-bg-active);
+  color: var(--color-text-white);
+}
+
+.content {
+  flex: 1;
+  background: var(--color-bg-content);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-btn:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+.primary-btn:active {
+  transform: translateY(0);
+}
